@@ -8,7 +8,7 @@ function parseInput(raw) {
 
 async function send() {
   const data = parseInput(document.getElementById("input").value);
-  const url = document.getElementById("apiUrl").value;
+  const url = "https://bfhl-project-lpzj.onrender.com";
 
   const res = await fetch(url + "/bfhl", {
     method: "POST",
