@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hierarchy Analyzer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Hierarchy Analyzer 🚀</h1>
+    <p>Analyze node relationships, detect cycles, and visualize trees</p>
+  </div>
+
+  <!-- INPUT CARD -->
+  <div class="card">
+    <div class="card-header">Input Nodes</div>
+
+    <textarea id="input">
+A->B, A->C, B->D
+    </textarea>
+
+    <div class="controls">
+      <input id="apiUrl" value="http://localhost:3000" />
+
+      <button class="btn primary" onclick="send()">Run</button>
+      <button class="btn secondary" onclick="showTrees()">Only Trees</button>
+      <button class="btn ghost" onclick="clearAll()">Clear</button>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div id="summary" class="summary"></div>
+
+  <div class="card">
+  <div class="card-header">Tree Visualization</div>
+  <div id="treeContainer"></div>
+</div>
+
+  <!-- OUTPUT -->
+  <div class="card">
+    <div class="card-header">Response</div>
+    <pre id="output"></pre>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
